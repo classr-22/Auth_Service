@@ -40,6 +40,11 @@ class UserService{
             return newToken;
 
         } catch (error) {
+
+            if(error.name=='AttributeNotFound'){
+                throw error;
+            }
+
             console.log("something went wrong in sign in process");
             throw error;
         }
